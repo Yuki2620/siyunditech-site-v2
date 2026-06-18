@@ -266,18 +266,60 @@
 <section class="section dark" id="quote">
   <div class="container">
     <div class="section-title"><h2>Get Engineering Quote</h2><p>Send machine brand, part name, quantity and drawing/photo. We will check manufacturing feasibility and price.</p></div>
-    <form class="form" action="mailto:gzserendipity@aliyun.com" method="post" enctype="text/plain">
-      <input name="name" placeholder="Name" required>
-      <input name="company" placeholder="Company">
-      <input name="country" placeholder="Country">
-      <select name="machine_brand"><option>Machine Brand</option><option>KRONES</option><option>SIDEL</option><option>KHS</option><option>Other</option></select>
-      <input name="part_name" placeholder="Required Part / Code">
-      <input name="quantity" placeholder="Quantity">
-      <textarea name="requirement" placeholder="Describe your requirement. For drawing/photo, please send by WhatsApp after submitting."></textarea>
-      <button class="btn wide" type="submit">Get Quote Within 24 Hours</button>
+    <form class="form" id="leadForm" onsubmit="return false;">
+      <input id="lead_name" name="customer_name" placeholder="Name" required autocomplete="name">
+      <input id="lead_company" name="customer_company" placeholder="Company" autocomplete="organization">
+      <input id="lead_country" name="customer_contact" placeholder="Email / WhatsApp" required autocomplete="on">
+      <select id="lead_brand" name="machine_brand"><option>Machine Brand</option><option>KRONES</option><option>SIDEL</option><option>KHS</option><option>Other</option></select>
+      <input id="lead_part" name="part_info" placeholder="Required Part / Code">
+      <input id="lead_qty" name="order_qty" placeholder="Quantity">
+      <textarea id="lead_msg" name="lead_details" placeholder="Describe your requirement. For drawing/photo, please send by WhatsApp after submitting."></textarea>
+      <button class="btn wide" type="submit" id="submitBtn">Get Quote Within 24 Hours</button>
+      <p id="formStatus" style="display:none; margin-top:20px; font-weight:bold;"></p>
     </form>
   </div>
 </section>
+
+<script>
+    document.getElementById('leadForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = document.getElementById('submitBtn');
+        const status = document.getElementById('formStatus');
+        btn.innerText = 'Sending...';
+        btn.disabled = true;
+
+        const data = {
+            name: document.getElementById('lead_name').value,
+            company: document.getElementById('lead_company').value,
+            email: document.getElementById('lead_country').value,
+            brand: document.getElementById('lead_brand').value,
+            part: document.getElementById('lead_part').value,
+            qty: document.getElementById('lead_qty').value,
+            message: document.getElementById('lead_msg').value
+        };
+
+        try {
+            const res = await fetch('/api/notify', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            if (res.ok) {
+                status.innerText = '✅ Success! We will contact you via email/WhatsApp soon.';
+                status.style.color = '#00ff00';
+                document.getElementById('leadForm').reset();
+            } else {
+                throw new Error('Failed');
+            }
+        } catch (err) {
+            status.innerText = '❌ Error. Please contact us via WhatsApp directly.';
+            status.style.color = '#ff4444';
+        }
+        status.style.display = 'block';
+        btn.innerText = 'Get Quote Within 24 Hours';
+        btn.disabled = false;
+    });
+</script>
 
 <footer><div class="container">
   <strong>Siyundi Tech</strong><br>

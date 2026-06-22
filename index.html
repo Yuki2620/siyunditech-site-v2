@@ -4,39 +4,62 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-site-verification" content="f4CrOZeo4zSWXPudG5pLNuHNEZ1FkI4Nlcdu2yutYbQ" />
 <title>Siyundi Tech | KRONES & SIDEL Spare Parts Global Supplier | V5 Business System</title>
-<meta name="description" content="Compatible spare parts for Krones and Sidel packaging machinery. OEM CNC precision manufacturing.">
 <link rel="stylesheet" href="/assets/css/style.css">
 <style>
-  /* Reinforced Clickable Zones */
-  .v8-hero-container { position: relative; width: 100%; border-radius: 34px; overflow: hidden; }
-  .v8-hero-img { display: block; width: 100%; height: auto; pointer-events: none; user-select: none; }
+  .v5-btn { padding: 8px 15px; border-radius: 4px; text-decoration: none; font-weight: bold; margin-left: 10px; font-size: 13px; }
+  .v5-rfq { background: #ff7a00; color: white; }
+  .v5-crm { background: #00b4ff; color: white; }
   
-  .hotspot { 
-    position: absolute; 
-    cursor: pointer !important; 
-    z-index: 99999; 
-    display: block;
-    background: rgba(0,0,0,0); /* Forced hit-test area */
-    pointer-events: auto !important;
+  /* 高精度 Hero 容器 */
+  .hero-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 34px;
+    overflow: hidden;
+    line-height: 0; /* 消除图片下方的空隙 */
   }
   
-  /* Precision coordinates based on image button positions */
-  .spot-rfq { bottom: 8%; left: 3.5%; width: 15%; height: 14%; }
-  .spot-drawing { bottom: 8%; left: 18.5%; width: 15%; height: 14%; }
-  .spot-wa { bottom: 8%; left: 33.5%; width: 22%; height: 14%; }
+  .hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* 绝对点击层 - 锁定比例 */
+  .click-layer {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+  }
+
+  .nav-hotspot {
+    position: absolute;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    background: rgba(255,255,255,0); /* 保持透明 */
+    z-index: 1000;
+  }
+
+  /* 针对 v8 图片按钮位置的像素级校准 (基于图片比例) */
+  .spot-1 { bottom: 8.5%; left: 4.5%; width: 13.5%; height: 9.5%; } /* RFQ */
+  .spot-2 { bottom: 8.5%; left: 18.8%; width: 13.5%; height: 9.5%; } /* Drawing */
+  .spot-3 { bottom: 8.5%; left: 33.2%; width: 21%; height: 9.5%; } /* WhatsApp */
 
   @media (max-width: 768px) {
-    .spot-rfq { bottom: 4%; left: 2%; width: 31%; height: 20%; }
-    .spot-drawing { bottom: 4%; left: 34%; width: 31%; height: 20%; }
-    .spot-wa { bottom: 4%; left: 66%; width: 32%; height: 20%; }
+    .spot-1 { bottom: 4%; left: 2%; width: 31%; height: 18%; }
+    .spot-2 { bottom: 4%; left: 34%; width: 31%; height: 18%; }
+    .spot-3 { bottom: 4%; left: 66%; width: 32%; height: 18%; }
   }
 </style>
 </head>
 <body>
+
 <div class="topbar"><div class="container"><div>WhatsApp/Wechat: +86 13825017925</div><div>Email: gzserendipity@aliyun.com</div></div></div>
 <header><div class="container nav">
   <a class="logo" href="/">
-    <img src="/assets/images/syd-logo-new.png" alt="SIYUNDI TECH" style="height: 45px; margin-right:12px; border-radius:4px;">
+    <img src="/assets/images/syd-logo-new.png" alt="SYD TECH" style="height:45px; margin-right:12px;">
     <strong>SIYUNDI<span style="color:#00b4ff">TECH</span></strong>
   </a>
   <nav class="menu">
@@ -49,15 +72,19 @@
   </nav>
   <a class="btn blue" href="/contact.html" style="background:#00b4ff;color:white;padding:10px 20px;text-decoration:none;border-radius:6px;font-weight:bold;">Get Quote</a>
 </div></header>
+
 <div class="container" style="padding: 20px 0;">
-  <section class="v8-hero-container">
-    <img src="/assets/siyundi-v8-hero.png" class="v8-hero-img" alt="Siyundi Tech">
-    <a href="/rfq.html" class="hotspot spot-rfq" title="RFQ"></a>
-    <a href="/contact.html" class="hotspot spot-drawing" title="Drawing"></a>
-    <a href="https://wa.me/8613825017925" class="hotspot spot-wa" title="WhatsApp" target="_blank"></a>
-  </section>
+  <div class="hero-wrapper">
+    <img src="/assets/siyundi-v8-hero.png" class="hero-img" alt="Siyundi V8 Background">
+    <div class="click-layer">
+      <a href="/rfq.html" class="nav-hotspot spot-1" title="RFQ Quote"></a>
+      <a href="/contact.html" class="nav-hotspot spot-2" title="Upload Drawing"></a>
+      <a href="https://wa.me/8613825017925" class="nav-hotspot spot-3" title="WhatsApp" target="_blank"></a>
+    </div>
+  </div>
 </div>
-<section class="section white">
+
+<section class="section white" style="padding-top:40px;">
   <div class="container">
     <div class="section-title"><h2>Global Spare Parts Network</h2><p>Access our high-precision replacement components.</p></div>
     <div class="grid grid-3">
@@ -67,28 +94,21 @@
     </div>
   </div>
 </section>
-<section class="section dark">
-  <div class="container">
-    <div class="section-title"><h2>OEM Manufacturing Capability</h2><p>Drawing, Sample and CNC Precision Support.</p></div>
-    <div class="grid grid-4">
-      <div class="card"><h3>Drawing Production</h3></div>
-      <div class="card"><h3>Sample Reverse Engineering</h3></div>
-      <div class="card"><h3>Precision CNC Machining</h3></div>
-      <div class="card"><h3>Engineering Plastic Parts</h3></div>
-    </div>
-  </div>
-</section>
+
 <section class="section" id="quote">
   <div class="container">
-    <div class="section-title"><h2>Get Fast Quote</h2></div>
+    <div class="section-title"><h2>Get Engineering Quote</h2><p>Send part info for a fast quote.</p></div>
     <div style="background:#10263a; padding:40px; border-radius:12px; text-align:center;">
        <a href="https://wa.me/8613825017925" class="btn" style="background:#ff7a00; color:white; padding:15px 30px; text-decoration:none; border-radius:6px; font-weight:bold;">Message on WhatsApp for Fast Quote</a>
     </div>
   </div>
 </section>
-<footer><div class="container">
-  <strong>Siyundi Tech</strong> | OEM Compatible Spare Parts Manufacturer<br>
-  WhatsApp: +86 13825017925 | Email: gzserendipity@aliyun.com<br>
-  <a href="/legal.html" style="color:#444; text-decoration:none; font-size:12px;">Legal Disclaimer & Privacy Policy</a>
-</div></footer>
+
+<footer style="padding:60px 0; background:#08141f; text-align:center; color:#666;">
+  <div class="container">
+    <strong>Siyundi Tech</strong> | OEM Spare Parts Manufacturer<br>
+    WhatsApp: +86 13825017925 | Email: gzserendipity@aliyun.com<br>
+    <a href="/legal.html" style="color:#444; text-decoration:none; font-size:12px;">Legal Disclaimer & Privacy Policy</a>
+  </div>
+</footer>
 </body></html>

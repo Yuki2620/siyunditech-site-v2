@@ -89,3 +89,58 @@ body {
 footer{background:#07111d;color:#a8bacd;padding:36px 0}.float-wa{position:fixed;right:22px;bottom:22px;z-index:50;background:#25d366;color:white;border-radius:999px;padding:15px 19px;font-weight:900;box-shadow:0 14px 30px rgba(0,0,0,.25)}
 @media(max-width:960px){.hero-wrap{grid-template-columns:1fr}.grid-3,.grid-4,.product-grid,.catalog-preview{grid-template-columns:repeat(2,1fr)}.stats,.process,.checks{grid-template-columns:repeat(2,1fr)}.menu{display:none}}
 @media(max-width:560px){.grid-3,.grid-4,.product-grid,.catalog-preview,.stats,.process,.checks,.form{grid-template-columns:1fr}.section{padding:48px 0}.product-mosaic{grid-template-columns:1fr}}
+
+
+/* Added via automation */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #06111d; }
+.siyundi-v8-hero {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #06111d;
+}
+.hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+}
+/* Transparent clickable areas positioned over the three CTA buttons in the hero image. */
+.cta-hotspot {
+  position: absolute;
+  display: block;
+  z-index: 5;
+  border-radius: 999px;
+  background: rgba(255,255,255,0);
+  cursor: pointer;
+}
+.cta-hotspot:focus-visible {
+  outline: 3px solid #38bdf8;
+  outline-offset: 4px;
+}
+/* Coordinates are percentages, so they scale with the image. */
+.cta-rfq {
+  left: 3.55%;
+  top: 58.25%;
+  width: 11.9%;
+  height: 6.15%;
+}
+.cta-upload {
+  left: 16.55%;
+  top: 58.25%;
+  width: 12.2%;
+  height: 6.15%;
+}
+.cta-whatsapp {
+  left: 29.9%;
+  top: 58.25%;
+  width: 15.5%;
+  height: 6.15%;
+}
+@media (max-width: 768px) {
+  .siyundi-v8-hero { min-width: 960px; }
+  body { overflow-x: auto; }
+}

@@ -1,0 +1,1 @@
+document.querySelectorAll('[data-search]').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault(); const q=f.querySelector('input').value.trim(); location.href='/rfq.html'+(q?'?part='+encodeURIComponent(q):'');}));

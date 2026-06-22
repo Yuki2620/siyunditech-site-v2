@@ -3,99 +3,65 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-site-verification" content="f4CrOZeo4zSWXPudG5pLNuHNEZ1FkI4Nlcdu2yutYbQ" />
-<title>Siyundi Tech | KRONES & SIDEL Spare Parts Global Supplier | V5 System</title>
+<title>Siyundi Tech | KRONES & SIDEL Spare Parts Global Supplier | V5 Business System</title>
 <meta name="description" content="Compatible spare parts for Krones and Sidel packaging machinery. OEM CNC precision manufacturing.">
-<!-- 修正后的绝对路径 -->
 <link rel="stylesheet" href="/assets/css/style.css">
-<style>
-  .v5-btn { padding: 8px 15px; border-radius: 4px; text-decoration: none; font-weight: bold; margin-left: 10px; font-size: 13px; }
-  .v5-rfq { background: #ff7a00; color: white; }
-  .v5-crm { background: #00b4ff; color: white; }
-  
-  /* v8 Hero 终极加固 */
-  .siyundi-v8-hero { 
-    position: relative; 
-    width: 100%; 
-    max-width: 1200px;
-    margin: 0 auto;
-    border-radius: 34px; 
-    overflow: hidden; 
-    background: #061322; 
-    box-shadow: 0 24px 70px rgba(0, 20, 45, 0.18); 
-  }
-  .siyundi-v8-hero__image { 
-    display: block; 
-    width: 100%; 
-    height: auto; 
-    min-height: 300px; /* 防止图片没加载时高度坍塌 */
-  }
-
-  .cta-hotspot {
-    position: absolute;
-    display: block;
-    z-index: 1000;
-    cursor: pointer !important;
-    background: rgba(0,0,0,0);
-  }
-  
-  /* 针对最终版海报的精确百分比对位 */
-  .cta-rfq { left: 3.5%; top: 58%; width: 12%; height: 7%; }
-  .cta-upload { left: 16.5%; top: 58%; width: 12%; height: 7%; }
-  .cta-whatsapp { left: 29.8%; top: 58%; width: 16%; height: 7%; }
-
-  @media (max-width: 768px) {
-    .siyundi-v8-hero { border-radius: 15px; }
-    .cta-hotspot { top: auto; bottom: 5%; height: 15%; }
-    .cta-rfq { left: 2%; width: 31%; }
-    .cta-upload { left: 34%; width: 31%; }
-    .cta-whatsapp { left: 66%; width: 32%; }
-  }
-</style>
 </head>
 <body>
 
 <div class="topbar"><div class="container"><div>WhatsApp/Wechat: +86 13825017925</div><div>Email: gzserendipity@aliyun.com</div></div></div>
 <header><div class="container nav">
   <a class="logo" href="/">
-    <img src="/assets/images/syd-logo-new.png" alt="SIYUNDI TECH" style="height:45px; margin-right:12px;">
+    <img src="/assets/images/syd-logo-new.png" alt="SYD TECH" style="height:45px; margin-right:12px;">
     <strong>SIYUNDI<span style="color:#00b4ff">TECH</span></strong>
   </a>
   <nav class="menu">
     <a href="/brands/krones/">KRONES</a>
     <a href="/brands/sidel/">SIDEL</a>
-    <a href="/products/index.html">Products</a>
-    <a href="/visual-catalog/index.html">Catalog</a>
-    <a href="/rfq.html" class="v5-btn v5-rfq">RFQ</a>
-    <a href="/crm.html" class="v5-btn v5-crm">CRM</a>
+    <a href="/brands/khs/">KHS</a>
+    <div class="dropdown">
+      <a href="/products/index.html">PRODUCTS</a>
+      <div class="dropdown-content">
+        <a href="/products/blow-molding-parts.html">Blow Molding Parts</a>
+        <a href="/products/filling-machine-parts.html">Filling Machine Parts</a>
+        <a href="/products/labeling-machine-parts.html">Labeling Machine Parts</a>
+        <a href="/products/conveyor-parts.html">Conveyor Parts</a>
+        <a href="/products/capping-machine-parts.html">Capping Machine Parts</a>
+        <a href="/products/change-parts.html">Change Parts</a>
+        <a href="/products/wear-parts.html">Wear Parts</a>
+        <a href="/products/custom-cnc-parts.html">Custom CNC Parts</a>
+      </div>
+    </div>
+    <a href="/visual-catalog/index.html">CATALOG</a>
+    <a href="/rfq.html" style="background:#ff7a00; color:white; padding:8px 15px; border-radius:4px;">RFQ</a>
+    <a href="/crm.html" style="background:#00b4ff; color:white; padding:8px 15px; border-radius:4px;">CRM</a>
   </nav>
-  <a class="btn blue" href="/contact.html" style="background:#00b4ff;color:white;padding:10px 20px;text-decoration:none;border-radius:6px;font-weight:bold;">Get Quote</a>
 </div></header>
 
 <div class="container" style="padding: 20px 0;">
-  <section class="siyundi-v8-hero">
-    <img class="siyundi-v8-hero__image" src="/assets/siyundi-v8-hero-final.png" alt="Siyundi V8 Hero">
-    <a class="cta-hotspot cta-rfq" href="/rfq.html" title="Get RFQ Quote"></a>
-    <a class="cta-hotspot cta-upload" href="/contact.html" title="Upload Drawing"></a>
-    <a class="cta-hotspot cta-whatsapp" href="https://wa.me/8613825017925" title="WhatsApp Engineer" target="_blank"></a>
+  <section class="v8-hero-container" style="position: relative; width: 100%; border-radius: 34px; overflow: hidden; box-shadow: 0 24px 70px rgba(0, 20, 45, 0.18);">
+    <img src="/assets/siyundi-v8-hero-final.png" class="v8-hero-img" alt="V8 Tech Hero" style="display: block; width: 100%; height: auto; pointer-events: none;">
+    <!-- 点击热区保留 -->
+    <a href="/rfq.html" style="position:absolute; bottom:8%; left:3.5%; width:15%; height:14%; cursor:pointer; z-index:100;" title="RFQ"></a>
+    <a href="/contact.html" style="position:absolute; bottom:8%; left:18.5%; width:15%; height:14%; cursor:pointer; z-index:100;" title="Drawing"></a>
+    <a href="https://wa.me/8613825017925" style="position:absolute; bottom:8%; left:33.5%; width:22%; height:14%; cursor:pointer; z-index:100;" title="WhatsApp" target="_blank"></a>
   </section>
 </div>
 
-<section class="section white" style="padding-top:40px;">
+<section class="section white">
   <div class="container">
     <div class="section-title"><h2>Global Spare Parts Network</h2><p>Access our high-precision replacement components.</p></div>
     <div class="grid grid-3">
       <div class="card brand-card"><div><h3>KRONES Parts</h3><p>Full range of Krones compatible components.</p></div><a class="btn blue" href="/brands/krones/">View Parts</a></div>
       <div class="card brand-card"><div><h3>SIDEL Parts</h3><p>High-performance Sidel replacement parts.</p></div><a class="btn blue" href="/brands/sidel/">View Parts</a></div>
-      <div class="card brand-card"><div><h3>Visual Catalog</h3><p>Browse 300+ product images and 17-page catalog.</p></div><a class="btn blue" href="/visual-catalog/index.html">Open Catalog</a></div>
+      <div class="card brand-card"><div><h3>KHS Parts</h3><p>KHS Compatible spare parts supplier.</p></div><a class="btn blue" href="/brands/khs/">View Parts</a></div>
     </div>
   </div>
 </section>
 
-<footer style="padding:60px 0; background:#08141f; text-align:center; color:#666;">
-  <div class="container">
-    <strong>Siyundi Tech</strong> | OEM Spare Parts Manufacturer<br>
-    WhatsApp: +86 13825017925 | Email: gzserendipity@aliyun.com<br>
-    <a href="/legal.html" style="color:#444; text-decoration:none; font-size:12px;">Legal Disclaimer & Privacy Policy</a>
-  </div>
-</footer>
+<footer><div class="container" style="text-align:center; padding: 40px 0; color: #666;">
+  <strong>Siyundi Tech</strong> | OEM Spare Parts Manufacturer<br>
+  WhatsApp: +86 13825017925 | Email: gzserendipity@aliyun.com<br>
+  <a href="/legal.html" style="color:#444; text-decoration:none; font-size:12px;">Legal Disclaimer & Privacy Policy</a>
+</div></footer>
 </body></html>

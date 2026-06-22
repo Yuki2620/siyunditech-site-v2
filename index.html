@@ -11,50 +11,62 @@
   .v5-rfq { background: #ff7a00; color: white; }
   .v5-crm { background: #00b4ff; color: white; }
   
-  /* 终极 Hero 方案 */
-  .siyundi-v8-hero { 
-    position: relative; 
-    width: 100%; 
-    max-width: 1200px;
-    margin: 0 auto;
-    border-radius: 34px; 
-    overflow: hidden; 
-    background: #061322; 
-    box-shadow: 0 24px 70px rgba(0, 20, 45, 0.18); 
-  }
-  .siyundi-v8-hero__image { 
-    display: block; 
-    width: 100%; 
-    height: auto; 
-    user-select: none;
-    pointer-events: none; /* 让图片本身不阻挡点击事件 */
-  }
-
-  /* 物理按钮层 - 直接定位到图片按钮上方 */
-  .button-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    z-index: 999;
+  /* 终极 Hero 方案：图片归图片，按钮归按钮 */
+  .hero-container {
+    background: #061322;
+    border-radius: 34px;
+    overflow: hidden;
+    box-shadow: 0 24px 70px rgba(0, 20, 45, 0.18);
+    position: relative;
   }
   
-  .btn-spot {
-    position: absolute;
+  .hero-image-box {
+    width: 100%;
+    overflow: hidden;
+    height: 480px; /* 调整高度以裁掉原图底部的假按钮 */
+  }
+  
+  .hero-image-box img {
+    width: 100%;
+    height: auto;
     display: block;
-    cursor: pointer !important;
-    text-decoration: none;
-    /* background: rgba(255,0,0,0.3); /* 调试用：如果您还是按不动，我稍后会显示红色区域来对位 */
+    margin-top: 0; /* 默认显示顶部和中部文案 */
   }
-  
-  /* 精确比例对位 */
-  .spot-1 { bottom: 10%; left: 5%; width: 13%; height: 8%; }
-  .spot-2 { bottom: 10%; left: 20%; width: 13%; height: 8%; }
-  .spot-3 { bottom: 10%; left: 35%; width: 19%; height: 8%; }
 
+  /* 真实按钮区域 - 放在图片上方 */
+  .real-cta-overlay {
+    position: absolute;
+    bottom: 60px;
+    left: 45px;
+    display: flex;
+    gap: 20px;
+    z-index: 100;
+  }
+
+  .real-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-rfq { background: #ff7a00; color: white; box-shadow: 0 4px 15px rgba(255,122,0,0.3); }
+  .btn-drawing { background: #004a99; color: white; box-shadow: 0 4px 15px rgba(0,74,153,0.3); }
+  .btn-wa { background: white; color: black; box-shadow: 0 4px 15px rgba(255,255,255,0.2); }
+  
+  .real-btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
+  
   @media (max-width: 768px) {
-    .siyundi-v8-hero { border-radius: 15px; }
-    .spot-1 { bottom: 5%; left: 4%; width: 30%; height: 20%; }
-    .spot-2 { bottom: 5%; left: 36%; width: 30%; height: 20%; }
-    .spot-3 { bottom: 5%; left: 68%; width: 30%; height: 20%; }
+    .hero-image-box { height: auto; }
+    .real-cta-overlay { position: static; padding: 20px; flex-direction: column; width: 100%; box-sizing: border-box; }
+    .real-btn { width: 100%; }
   }
 </style>
 </head>
@@ -78,14 +90,20 @@
 </div></header>
 
 <div class="container" style="padding: 20px 0;">
-  <section class="siyundi-v8-hero">
-    <img class="siyundi-v8-hero__image" src="/assets/siyundi-v8-hero.png" alt="Siyundi Tech V8 Banner">
-    <div class="button-overlay">
-      <a href="/rfq.html" class="btn-spot spot-1" title="Get RFQ Quote"></a>
-      <a href="/contact.html" class="btn-spot spot-2" title="Upload Drawing"></a>
-      <a href="https://wa.me/8613825017925" class="btn-spot spot-3" title="WhatsApp Engineer"></a>
+  <div class="hero-container">
+    <div class="hero-image-box">
+      <img src="/assets/siyundi-v8-hero.png" alt="Siyundi Tech Background">
     </div>
-  </section>
+    <!-- 真实的、百分之百可按动的 HTML 按钮 -->
+    <div class="real-cta-overlay">
+      <a href="/rfq.html" class="real-btn btn-rfq">Get RFQ Quote</a>
+      <a href="/contact.html" class="real-btn btn-drawing">Upload Drawing</a>
+      <a href="https://wa.me/8613825017925" class="real-btn btn-wa">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width:20px; margin-right:8px;">
+        WhatsApp Engineer
+      </a>
+    </div>
+  </div>
 </div>
 
 <section class="section white" style="padding-top:40px;">
@@ -95,16 +113,6 @@
       <div class="card brand-card"><div><h3>KRONES Parts</h3><p>Full range of Krones compatible components.</p></div><a class="btn blue" href="/brands/krones/">View Parts</a></div>
       <div class="card brand-card"><div><h3>SIDEL Parts</h3><p>High-performance Sidel replacement parts.</p></div><a class="btn blue" href="/brands/sidel/">View Parts</a></div>
       <div class="card brand-card"><div><h3>Visual Catalog</h3><p>Browse 300+ product images and 17-page catalog.</p></div><a class="btn blue" href="/visual-catalog/index.html">Open Catalog</a></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="quote">
-  <div class="container">
-    <div class="section-title"><h2>Get Engineering Quote</h2><p>Send part photo, drawing or code for a 24h fast quote.</p></div>
-    <div style="background:#10263a; padding:40px; border-radius:12px; text-align:center;">
-       <p style="font-size:24px;">Quick Contact Form Ready</p>
-       <a href="https://wa.me/8613825017925" class="btn" style="background:#ff7a00; color:white; padding:15px 30px; text-decoration:none; border-radius:6px; font-weight:bold;">Message on WhatsApp</a>
     </div>
   </div>
 </section>

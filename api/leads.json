@@ -1,1 +1,5 @@
-[\n  {\n    "id": 1,\n    "keyword": "krones spare parts",\n    "source": "SEO",\n    "status": "new"\n  },\n  {\n    "id": 2,\n    "keyword": "sidel mandrel system",\n    "source": "ADS",\n    "status": "contacted"\n  }\n]
+
+[
+ {"id":1,"keyword":"krones spare parts","source":"SEO","status":"new"},
+ {"id":2,"keyword":"sidel mandrel system","source":"ADS","status":"contacted"}
+]

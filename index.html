@@ -4,69 +4,67 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-site-verification" content="f4CrOZeo4zSWXPudG5pLNuHNEZ1FkI4Nlcdu2yutYbQ" />
 <title>Siyundi Tech | KRONES & SIDEL Spare Parts Global Supplier | V5 Business System</title>
-<meta name="description" content="Compatible spare parts for Krones and Sidel packaging machinery. OEM CNC precision manufacturing.">
 <link rel="stylesheet" href="/assets/css/style.css">
 <style>
   .v5-btn { padding: 8px 15px; border-radius: 4px; text-decoration: none; font-weight: bold; margin-left: 10px; font-size: 13px; }
   .v5-rfq { background: #ff7a00; color: white; }
   .v5-crm { background: #00b4ff; color: white; }
   
-  /* 终极 Hero 方案：图片归图片，按钮归按钮 */
-  .hero-container {
+  /* 终极 Hero 容器：彻底解决重影 */
+  .hero-block {
     background: #061322;
     border-radius: 34px;
     overflow: hidden;
     box-shadow: 0 24px 70px rgba(0, 20, 45, 0.18);
-    position: relative;
+    display: flex;
+    flex-direction: column;
   }
   
-  .hero-image-box {
+  /* 裁剪掉图片底部的假按钮区域 */
+  .image-crop-box {
     width: 100%;
+    height: 420px; /* 固定高度以裁掉底部按钮 */
     overflow: hidden;
-    height: 480px; /* 调整高度以裁掉原图底部的假按钮 */
   }
   
-  .hero-image-box img {
+  .image-crop-box img {
     width: 100%;
     height: auto;
     display: block;
-    margin-top: 0; /* 默认显示顶部和中部文案 */
   }
 
-  /* 真实按钮区域 - 放在图片上方 */
-  .real-cta-overlay {
-    position: absolute;
-    bottom: 60px;
-    left: 45px;
+  /* 真实的按钮交互区 - 位于裁剪后的图片下方 */
+  .real-action-bar {
+    padding: 30px 45px 50px;
     display: flex;
     gap: 20px;
-    z-index: 100;
+    background: #061322; /* 确保背景色和图片无缝衔接 */
   }
 
-  .real-btn {
+  .action-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px 30px;
+    padding: 16px 35px;
     border-radius: 50px;
     font-weight: bold;
     text-decoration: none;
-    font-size: 16px;
-    transition: all 0.3s ease;
+    font-size: 17px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border: none;
     cursor: pointer;
   }
 
-  .btn-rfq { background: #ff7a00; color: white; box-shadow: 0 4px 15px rgba(255,122,0,0.3); }
-  .btn-drawing { background: #004a99; color: white; box-shadow: 0 4px 15px rgba(0,74,153,0.3); }
-  .btn-wa { background: white; color: black; box-shadow: 0 4px 15px rgba(255,255,255,0.2); }
+  .btn-orange { background: #ff7a00; color: white; box-shadow: 0 6px 20px rgba(255,122,0,0.4); }
+  .btn-blue { background: #004a99; color: white; box-shadow: 0 6px 20px rgba(0,74,153,0.4); }
+  .btn-white { background: white; color: black; box-shadow: 0 6px 20px rgba(255,255,255,0.2); }
   
-  .real-btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
+  .action-btn:hover { transform: scale(1.05) translateY(-3px); }
   
   @media (max-width: 768px) {
-    .hero-image-box { height: auto; }
-    .real-cta-overlay { position: static; padding: 20px; flex-direction: column; width: 100%; box-sizing: border-box; }
-    .real-btn { width: 100%; }
+    .image-crop-box { height: 260px; }
+    .real-action-bar { flex-direction: column; padding: 20px; }
+    .action-btn { width: 100%; text-align: center; }
   }
 </style>
 </head>
@@ -90,15 +88,15 @@
 </div></header>
 
 <div class="container" style="padding: 20px 0;">
-  <div class="hero-container">
-    <div class="hero-image-box">
-      <img src="/assets/siyundi-v8-hero.png" alt="Siyundi Tech Background">
+  <div class="hero-block">
+    <div class="image-crop-box">
+      <img src="/assets/siyundi-v8-hero.png" alt="Siyundi Tech Machine Graphics">
     </div>
-    <!-- 真实的、百分之百可按动的 HTML 按钮 -->
-    <div class="real-cta-overlay">
-      <a href="/rfq.html" class="real-btn btn-rfq">Get RFQ Quote</a>
-      <a href="/contact.html" class="real-btn btn-drawing">Upload Drawing</a>
-      <a href="https://wa.me/8613825017925" class="real-btn btn-wa">
+    <!-- 按钮完美归位 -->
+    <div class="real-action-bar">
+      <a href="/rfq.html" class="action-btn btn-orange">Get RFQ Quote</a>
+      <a href="/contact.html" class="action-btn btn-blue">Upload Drawing</a>
+      <a href="https://wa.me/8613825017925" class="action-btn btn-white">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width:20px; margin-right:8px;">
         WhatsApp Engineer
       </a>

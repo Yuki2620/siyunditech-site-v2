@@ -1,0 +1,37 @@
+:root {
+  --page-bg: #f4f7fb;
+  --hero-radius: 34px;
+  --hero-max-width: 1480px;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--page-bg);
+}
+
+.page-shell {
+  width: 100%;
+  padding: 18px;
+}
+
+.siyundi-v8-hero {
+  width: min(100%, var(--hero-max-width));
+  margin: 0 auto;
+  border-radius: var(--hero-radius);
+  overflow: hidden;
+  background: #061322;
+  box-shadow: 0 24px 70px rgba(0, 20, 45, 0.18);
+}
+
+.siyundi-v8-hero__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .page-shell { padding: 10px; }
+  .siyundi-v8-hero { border-radius: 22px; }
+}

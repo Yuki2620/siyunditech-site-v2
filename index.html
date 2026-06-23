@@ -5,7 +5,6 @@
 <meta name="google-site-verification" content="f4CrOZeo4zSWXPudG5pLNuHNEZ1FkI4Nlcdu2yutYbQ" />
 <title>Siyundi Tech | KRONES & SIDEL Spare Parts Global Supplier | V5 Business System</title>
 <meta name="description" content="Compatible spare parts for Krones and Sidel packaging machinery. OEM CNC precision manufacturing.">
-<!-- 修正为绝对路径，并加入强制样式覆盖 -->
 <link rel="stylesheet" href="/assets/css/style.css">
 <style>
   body { background: #0b1b2b !important; color: #fff !important; margin: 0; font-family: Arial, sans-serif; }
@@ -21,13 +20,19 @@
   .v5-rfq { background: #ff7a00; color: white !important; }
   .v5-crm { background: #00b4ff; color: white !important; }
   
-  /* V8 Hero 终极加固 */
+  /* v8 Hero 保持不动 */
   .v8-hero-wrapper { position: relative; width: 100%; border-radius: 34px; overflow: hidden; margin-top: 20px; background: #061322; box-shadow: 0 24px 70px rgba(0, 20, 45, 0.18); }
   .v8-hero-img { display: block; width: 100%; height: auto; pointer-events: none; }
   .hotspot { position: absolute; cursor: pointer; z-index: 1000; background: rgba(0,0,0,0); }
   .spot-rfq { left: 3.5%; top: 58%; width: 12%; height: 7%; }
   .spot-upload { left: 16.5%; top: 58%; width: 12%; height: 7%; }
   .spot-wa { left: 29.8%; top: 58%; width: 16%; height: 7%; }
+
+  /* 表单安全美化 */
+  .form-box { background: #10263a; padding: 40px; border-radius: 12px; border: 1px solid #1a2a3a; margin-top: 40px; }
+  .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+  .form-box input, .form-box select, .form-box textarea { background: #08141f; border: 1px solid #1a2a3a; color: white; padding: 12px; border-radius: 6px; width: 100%; box-sizing: border-box; }
+  .form-box input:focus { border-color: #00b4ff; outline: none; }
 </style>
 </head>
 <body>
@@ -58,37 +63,36 @@
   </section>
 </div>
 
-<section class="section" style="padding: 60px 0; background: #0b1b2b;">
+<section class="section" id="quote" style="padding: 80px 0;">
   <div class="container">
-    <div style="text-align:center; margin-bottom: 50px;">
-      <h2 style="color:#00b4ff; font-size:32px;">Find Parts by Brand</h2>
-      <p style="color:#888;">Professional spare parts for global beverage plants.</p>
+    <div style="margin-bottom: 40px;">
+      <h2 style="color:#00b4ff; font-size:32px;">Request Engineering Quotation</h2>
+      <p style="color:#888;">Send part photo, drawing, code, machine brand and quantity. Our team will reply by email or WhatsApp.</p>
     </div>
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
-      <div style="background:#10263a; padding:30px; border-radius:12px; border:1px solid #1a2a3a;">
-        <h3 style="color:#fff;">KRONES Parts</h3>
-        <p style="color:#aaa;">Valves, rollers, bearings, seals and grippers.</p>
-        <a href="/brands/krones/" style="color:#00b4ff; text-decoration:none; font-weight:bold;">View KRONES Parts →</a>
-      </div>
-      <div style="background:#10263a; padding:30px; border-radius:12px; border:1px solid #1a2a3a;">
-        <h3 style="color:#fff;">SIDEL Parts</h3>
-        <p style="color:#aaa;">Mandrel, bottle handling and blow molding parts.</p>
-        <a href="/brands/sidel/" style="color:#00b4ff; text-decoration:none; font-weight:bold;">View SIDEL Parts →</a>
-      </div>
-      <div style="background:#10263a; padding:30px; border-radius:12px; border:1px solid #1a2a3a;">
-        <h3 style="color:#fff;">Visual Catalog</h3>
-        <p style="color:#aaa;">300+ product images and 17-page catalog.</p>
-        <a href="/visual-catalog/index.html" style="color:#00b4ff; text-decoration:none; font-weight:bold;">Open Catalog →</a>
-      </div>
+    
+    <!-- 安全加固表单：添加 method 和 action -->
+    <div class="form-box">
+      <form id="leadForm" method="POST" action="javascript:void(0);">
+        <div class="form-grid">
+          <input type="text" id="name" placeholder="Name" required autocomplete="name">
+          <input type="text" id="company" placeholder="Company" autocomplete="organization">
+          <input type="text" id="country" placeholder="Country" autocomplete="country">
+          <input type="email" id="email" placeholder="Email" required autocomplete="email">
+          <input type="text" id="whatsapp" placeholder="WhatsApp">
+          <select id="brand">
+            <option>Machine Brand</option>
+            <option>KRONES</option>
+            <option>SIDEL</option>
+            <option>KHS</option>
+            <option>Other</option>
+          </select>
+          <input type="text" id="part" placeholder="Required Part / Code">
+          <input type="number" id="qty" placeholder="Quantity">
+        </div>
+        <textarea id="message" placeholder="Describe your requirement..." style="margin-top:15px; height:120px;"></textarea>
+        <button type="submit" class="v5-btn v5-rfq" style="width:100%; margin: 20px 0 0 0; padding: 15px; font-size: 16px; cursor: pointer;">Get Engineering Quote Now</button>
+      </form>
     </div>
-  </div>
-</section>
-
-<section class="section" style="padding: 60px 0; background: #08141f; text-align:center;">
-  <div class="container">
-    <h2 style="color:#00b4ff;">Get Engineering Quote</h2>
-    <p style="color:#666;">Send part photo, drawing or code for a 24h fast quote.</p>
-    <a href="https://wa.me/8613825017925" class="v5-btn v5-rfq" style="padding: 15px 40px; font-size: 18px; margin-top: 20px;">Contact WhatsApp for Quote</a>
   </div>
 </section>
 
